@@ -13,7 +13,7 @@ namespace PANME.Web.Controllers
         public ActionResult Index()
         {
             var productosBL = new ProductosBL();
-            var listadeProductos = productosBL.obtenerProducto();
+            var listadeProductos = productosBL.ObtenerProductos();
 
             return View(listadeProductos);
         }
