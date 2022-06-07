@@ -16,17 +16,15 @@ namespace PANM.Win
         public Form1()
         {
             InitializeComponent();
+            var productosBL = new ProductosBL();
+            var listadeProductos = productosBL.ObtenerProductos();
+
+            listadeProductosBindingSource.DataSource = listadeProductos;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void listadeProductosBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            var productosBL = new ProductosBL();
-            var listadeProductos = productosBL.obtenerProducto();
 
-            foreach (var producto in listadeProductos)
-            {
-                MessageBox.Show(producto.Descripcion);
-            }
         }
     }
 }
